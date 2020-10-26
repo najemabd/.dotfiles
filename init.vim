@@ -19,12 +19,12 @@ colorscheme gruvbox
 "# This is the nvim set up config
 "syntax on
 set nu
-"set smartcase
-"set incsearch
-"set smartindent
-"set tabstop=4 softtabstop=4
-"set shiftwidth=4
-"set expandtab
+set smartcase
+set incsearch
+set smartindent
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
 
-"set colorcolumn=80
-"highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=100
+highlight ColorColumn ctermbg=0 guibg=lightgrey
