@@ -1,4 +1,4 @@
-"80# this is the plugin set up link and config
+"# this is the plugin set up link and config
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -35,5 +35,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 
+
 set colorcolumn=100
-"highlight ColorColumn ctermbg=0 guibg=lightgrey
+"highlight ColorColumn ctermbg=3 
+"ctermb=90 lightgrey
