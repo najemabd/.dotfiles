@@ -1,4 +1,4 @@
-"# this is the plugin set up link and config
+"80# this is the plugin set up link and config
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -8,6 +8,9 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
+Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+
 call plug#end()
 
 "gruvbox config
@@ -15,6 +18,12 @@ let g:gruvbox_contrast_dark = 'hard'
 
 colorscheme gruvbox
 :set bg=dark
+"#set nerd tree config
+map <silent> <C-n> :NERDTreeFocus<CR>
+"# set buffer shortcuts
+"map gz :bdelete<cr>   
+"map gb :bnext<cr>
+"map gB :nprev<cr>
 
 "# This is the nvim set up config
 syntax on
@@ -27,4 +36,4 @@ set shiftwidth=4
 set expandtab
 
 set colorcolumn=100
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
