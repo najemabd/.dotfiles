@@ -17,7 +17,7 @@ colorscheme gruvbox
 :set bg=dark
 
 "# This is the nvim set up config
-"syntax on
+syntax on
 set nu
 set smartcase
 set incsearch
