@@ -15,6 +15,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jmcantrell/vim-virtualenv'
 call plug#end()
 
 "gruvbox config
@@ -106,16 +107,15 @@ let g:netrw_winsize = 25
 "python  config
 au BufNewFile,BufRead *.py
     \ set textwidth=79
-    \ set autoindent
+"    \ set autoindent
     \ set fileformat=unix
-    \set encoding=utf-8
+    \ set encoding=utf-8
 let python_highlight_all=1
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 set textwidth=79
-"python with virtualenv support
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 "set coc config and improvements
 set cmdheight=2
 set updatetime=300
@@ -123,15 +123,6 @@ set updatetime=300
 "set buffer shortcuts
 map <leader>d :bdelete<CR>   
 map <leader>b :bnext<CR>
-"python with virtualenv support
-python3 << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 map <leader>B :nprev<CR>
 
 "Remapping some keyboard keys
