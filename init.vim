@@ -2,7 +2,8 @@
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 set nocompatible                
-filetype off
+filetype plugin indent on 
+syntax enable
 "Plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
@@ -11,12 +12,14 @@ Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jmcantrell/vim-virtualenv'
+"Plug 'ycm-core/YouCompleteMe'
 call plug#end()
+filetype plugin indent off
 
 "gruvbox config
 let g:gruvbox_contrast_dark = 'hard'
@@ -89,8 +92,6 @@ let g:airline#extensions#tabline#enabled = 1
       \ }
 
   "This is the nvim set up config
-"filetype plugin indent on
-syntax on
 set number relativenumber
 set smartcase
 set nowrap
@@ -101,9 +102,11 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set splitbelow
+set cursorline
 let mapleader = " "
 let g:ctrlp_use_caching = 0
 let g:netrw_winsize = 25
+
 "python  config
 au BufNewFile,BufRead *.py
     \ set textwidth=79
