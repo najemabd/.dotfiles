@@ -8,7 +8,6 @@ syntax enable
 call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'mbbill/undotree'
@@ -18,6 +17,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jmcantrell/vim-virtualenv'
 "Plug 'ycm-core/YouCompleteMe'
+Plug 'ap/vim-css-color'
+Plug 'junegunn/goyo.vim'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 filetype plugin indent off
 
@@ -31,8 +33,7 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
-"set nerd tree config
-map <silent> <C-n> :NERDTreeFocus<CR>
+
 
 "set airline config "other themes:'luna','dark','badwolf'
 let g:airline_theme='badwolf'  
@@ -101,8 +102,9 @@ set smartindent
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-set splitbelow
+set splitbelow splitright
 set cursorline
+set scrolloff=7
 let mapleader = " "
 let g:ctrlp_use_caching = 0
 let g:netrw_winsize = 25
@@ -134,10 +136,12 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>n :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <leader>sp :sp<CR>
 nnoremap <leader>vs :vs<CR>
 nnoremap <space> za
+nnoremap <leader><ENTER> :Goyo<CR>
+map <silent> <C-n> :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
